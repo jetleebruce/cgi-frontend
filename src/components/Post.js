@@ -3,9 +3,7 @@ import React from 'react'
 const API_URL = 'http://localhost:1337'
 const formatImageUrl = (url) => `${API_URL}${url}`
 
-const Post = ({url, description, likes}) => {
- console.log(url)
-
+export default function Post({url, description, likes}) {
     return (
       <div className='Post'>
         <img className='Post_Image' src={formatImageUrl(url)} alt='post'/>
@@ -15,4 +13,3 @@ const Post = ({url, description, likes}) => {
     )
 }
 
-export default Post
