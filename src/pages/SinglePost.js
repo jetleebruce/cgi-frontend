@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Post from '../components/Post'
+
+import { UserConext } from "../context/UserContext";
 
 export default function SinglePost({match, history}) {
 
     const { id } = match.params
     console.log("id", id)
+
+    const {user, setUser} = useContext(UserConext)
+    console.log("user", user)
+    console.log("setUser", setUser)
 
     const [post, setPost] = useState({})
     const [loading, setLoading] = useState(true)
@@ -52,7 +58,7 @@ export default function SinglePost({match, history}) {
     useEffect(() => {
         fetchPost()
     }, [])
-console.log(post.id);
+      console.log(post.id);
     return (
         <div>
             {loading && 
