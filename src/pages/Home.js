@@ -5,7 +5,6 @@ import Post from '../components/Post';
 
 export default function Home() {
     const [posts, setPosts] = useState([])
-    console.log(posts);
   
     useEffect(() => {
       const getPosts = async () => {

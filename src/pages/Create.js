@@ -4,7 +4,6 @@ const Create = () => {
   const [description, setDescription] = useState('')
   const [file, setFile] = useState(null)
   const [error, setError] = useState('')
-  console.log(file);
 
   const handleSubmit = async (event) => {
     event.preventDefault()
