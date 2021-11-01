@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import Post from '../components/Post'
 
-import { UserConext } from "../context/UserContext";
+import { UserContext } from "../context/UserContext";
 
 export default function SinglePost({match, history}) {
 
     const { id } = match.params
     console.log("id", id)
 
-    const {user, setUser} = useContext(UserConext)
+    const {user, setUser} = useContext(UserContext)
     console.log("user", user)
     console.log("setUser", setUser)
 

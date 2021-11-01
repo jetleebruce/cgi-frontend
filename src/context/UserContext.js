@@ -1,13 +1,12 @@
-import React, {createContext, usestate} from 'react'
-import { useState } from 'react/cjs/react.development'
+import React, {createContext, useState} from 'react'
 
-export const UserConext = createContext(null)
+export const UserContext = createContext(null)
 
 export default ({children}) => {
-    const [user, setUser] = useState({jwt: 'assssss'})
+    const [user, setUser] = useState(null)
     return (
-        <UserConext.Provider value={{user, setUser}}>
+        <UserContext.Provider value={{user, setUser}}>
             {children}
-        </UserConext.Provider>
+        </UserContext.Provider>
     )
 }
