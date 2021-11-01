@@ -1,9 +1,19 @@
- import React, {useState} from "react"
+ import React, {useState, useContext, useEffect} from "react"
+ import { UserContext } from '../context/UserContext'
 
- export default function Login() {
+ export default function Login({history}) {
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
    const [error, setError] =useState('')
+
+   const {user, setUser} = useContext(UserContext)
+   console.log("user", user)
+
+   useEffect(() => {
+     if(user){
+       history.push('/')
+     }
+   }, [user])
 
    const handleSubmit = async (event) => {
      event.preventDefault()
@@ -28,6 +38,8 @@
 
        return //Stop Execution
      }
+
+     setUser(data)
     } catch(err) {
       setError('Something went wrong' + err)
     }
